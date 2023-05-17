@@ -24,6 +24,22 @@ public class Tutor {
         this.email = email;
     }
 
+    public String getNavn(){
+        return navn;
+    }
+
+    public void addArrangement(Arrangement arrangement){
+        arrangementer.add(arrangement);
+    }
+
+    public void setHold(Hold hold){
+        this.hold = hold;
+    }
+
+    public boolean overlapperTiden(Arrangement tilmeldt, Arrangement arrangement) {
+        return tilmeldt.getStartTid().isBefore(arrangement.getSlutTid()) && tilmeldt.getSlutTid().isAfter(tilmeldt.getStartTid());
+    }
+
 
     public double arrangementsPris(){
         double totalPris = 0;

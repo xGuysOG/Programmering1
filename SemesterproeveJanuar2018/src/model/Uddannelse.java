@@ -18,4 +18,18 @@ public class Uddannelse {
     public void setNavn(String navn) {
         this.navn = navn;
     }
+
+    public void addHold(Hold hold){
+        this.holdListe.add(hold);
+    }
+
+    public ArrayList<Hold> getHoldUdenTutor() {
+        ArrayList<Hold> holdne = new ArrayList<>();
+        for(Hold hold : holdListe) {
+            if (hold.getTutore().size() < 1) {
+                holdne.add(hold);
+            }
+        }
+        return holdne;
+    }
 }

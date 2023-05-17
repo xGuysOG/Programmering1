@@ -7,6 +7,11 @@ public class Hold {
     private String holdLeder;
 
     private Uddannelse uddannelse;
+
+    public ArrayList<Tutor> getTutore() {
+        return tutore;
+    }
+
     private final ArrayList<Tutor> tutore = new ArrayList<>();
 
     public Hold(String betegnelsen, String holdLeder) {
@@ -22,20 +27,21 @@ public class Hold {
         return totalPris;
     }
 
-    private boolean overlapperTiden(Arrangement tilmeldt, Arrangement arrangement) {
-        return tilmeldt.getStartTid().isBefore(arrangement.getSlutTid()) && tilmeldt.getSlutTid().isAfter(tilmeldt.getStartTid());
-    }
-
     public boolean harTidsoverlap(Arrangement arrangement){
         for (Tutor tutor : tutore) {
             for (Arrangement tilArrangement : tutor.getArrangementer()) {
                 if (arrangement.getDato().equals(tilArrangement.getDato())) {
-                    if (overlapperTiden(tilArrangement, arrangement)) {
+                    if (tutor.overlapperTiden(tilArrangement, arrangement)) {
                         return true;
                     }
                 }
             }
         }
         return false;
+    }
+
+
+    public String getBetegnelse() {
+       return this.betegnelsen;
     }
 }
