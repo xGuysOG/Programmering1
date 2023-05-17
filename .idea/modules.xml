@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/KAS-Projekt/KAS-Projekt.iml" filepath="$PROJECT_DIR$/KAS-Projekt/KAS-Projekt.iml" />
       <module fileurl="file://$PROJECT_DIR$/L00 IntelliJ/L00 IntelliJ.iml" filepath="$PROJECT_DIR$/L00 IntelliJ/L00 IntelliJ.iml" />
       <module fileurl="file://$PROJECT_DIR$/L01/L01-JavaIntro.iml" filepath="$PROJECT_DIR$/L01/L01-JavaIntro.iml" />
       <module fileurl="file://$PROJECT_DIR$/L02/L02.iml" filepath="$PROJECT_DIR$/L02/L02.iml" />
