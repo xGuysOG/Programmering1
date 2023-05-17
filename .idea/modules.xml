@@ -6,22 +6,22 @@
       <module fileurl="file://$PROJECT_DIR$/L01/L01-JavaIntro.iml" filepath="$PROJECT_DIR$/L01/L01-JavaIntro.iml" />
       <module fileurl="file://$PROJECT_DIR$/L02/L02.iml" filepath="$PROJECT_DIR$/L02/L02.iml" />
       <module fileurl="file://$PROJECT_DIR$/L03/L03.iml" filepath="$PROJECT_DIR$/L03/L03.iml" />
-      <module fileurl="file://$PROJECT_DIR$/L04/L04.iml" filepath="$PROJECT_DIR$/L04/L04.iml" />
-      <module fileurl="file://$PROJECT_DIR$/L05/L05.iml" filepath="$PROJECT_DIR$/L05/L05.iml" />
-      <module fileurl="file://$PROJECT_DIR$/L06/L06.iml" filepath="$PROJECT_DIR$/L06/L06.iml" />
-      <module fileurl="file://$PROJECT_DIR$/L07/L07.iml" filepath="$PROJECT_DIR$/L07/L07.iml" />
-      <module fileurl="file://$PROJECT_DIR$/L08/L08.iml" filepath="$PROJECT_DIR$/L08/L08.iml" />
+      <module fileurl="file://$PROJECT_DIR$/L04/L04 (Iteration: while-sætning).iml" filepath="$PROJECT_DIR$/L04/L04 (Iteration: while-sætning).iml" />
+      <module fileurl="file://$PROJECT_DIR$/L05/L05 (Iteration: while med grafik).iml" filepath="$PROJECT_DIR$/L05/L05 (Iteration: while med grafik).iml" />
+      <module fileurl="file://$PROJECT_DIR$/L06/L06 (Iteration: for-sætning og grafik).iml" filepath="$PROJECT_DIR$/L06/L06 (Iteration: for-sætning og grafik).iml" />
+      <module fileurl="file://$PROJECT_DIR$/L07/L07 (Array Iteration: for-each sætning).iml" filepath="$PROJECT_DIR$/L07/L07 (Array Iteration: for-each sætning).iml" />
+      <module fileurl="file://$PROJECT_DIR$/L08/L08 (Array, 2-dim array).iml" filepath="$PROJECT_DIR$/L08/L08 (Array, 2-dim array).iml" />
       <module fileurl="file://$PROJECT_DIR$/ProjectDices/L09-11ProjectDices.iml" filepath="$PROJECT_DIR$/ProjectDices/L09-11ProjectDices.iml" />
       <module fileurl="file://$PROJECT_DIR$/L11-Shapes/L11-Shapes.iml" filepath="$PROJECT_DIR$/L11-Shapes/L11-Shapes.iml" />
-      <module fileurl="file://$PROJECT_DIR$/L12/L12.iml" filepath="$PROJECT_DIR$/L12/L12.iml" />
-      <module fileurl="file://$PROJECT_DIR$/L13/L13.iml" filepath="$PROJECT_DIR$/L13/L13.iml" />
-      <module fileurl="file://$PROJECT_DIR$/L14/L14.iml" filepath="$PROJECT_DIR$/L14/L14.iml" />
-      <module fileurl="file://$PROJECT_DIR$/L17/L17.iml" filepath="$PROJECT_DIR$/L17/L17.iml" />
-      <module fileurl="file://$PROJECT_DIR$/L18/L18.iml" filepath="$PROJECT_DIR$/L18/L18.iml" />
-      <module fileurl="file://$PROJECT_DIR$/L19/L19.iml" filepath="$PROJECT_DIR$/L19/L19.iml" />
-      <module fileurl="file://$PROJECT_DIR$/L24/L24.iml" filepath="$PROJECT_DIR$/L24/L24.iml" />
-      <module fileurl="file://$PROJECT_DIR$/L28/L28.iml" filepath="$PROJECT_DIR$/L28/L28.iml" />
-      <module fileurl="file://$PROJECT_DIR$/L33/L33.iml" filepath="$PROJECT_DIR$/L33/L33.iml" />
+      <module fileurl="file://$PROJECT_DIR$/L12/L12 (Klasser og objekter).iml" filepath="$PROJECT_DIR$/L12/L12 (Klasser og objekter).iml" />
+      <module fileurl="file://$PROJECT_DIR$/L13/L13 (Klasser og objekter  + Date/Time).iml" filepath="$PROJECT_DIR$/L13/L13 (Klasser og objekter  + Date/Time).iml" />
+      <module fileurl="file://$PROJECT_DIR$/L14/L14 (Opsamling af begreber).iml" filepath="$PROJECT_DIR$/L14/L14 (Opsamling af begreber).iml" />
+      <module fileurl="file://$PROJECT_DIR$/L17/L17 (ArrayList).iml" filepath="$PROJECT_DIR$/L17/L17 (ArrayList).iml" />
+      <module fileurl="file://$PROJECT_DIR$/L18/L18 (GUI med JavaFX).iml" filepath="$PROJECT_DIR$/L18/L18 (GUI med JavaFX).iml" />
+      <module fileurl="file://$PROJECT_DIR$/L19/L19 (GUI med JavaFX).iml" filepath="$PROJECT_DIR$/L19/L19 (GUI med JavaFX).iml" />
+      <module fileurl="file://$PROJECT_DIR$/L24/L24(Sammenhæng mellem klasser).iml" filepath="$PROJECT_DIR$/L24/L24(Sammenhæng mellem klasser).iml" />
+      <module fileurl="file://$PROJECT_DIR$/L28/L28 (Exceptions / Tekstfiler).iml" filepath="$PROJECT_DIR$/L28/L28 (Exceptions / Tekstfiler).iml" />
+      <module fileurl="file://$PROJECT_DIR$/L33/L33 (Repetition(Fletning og filer)).iml" filepath="$PROJECT_DIR$/L33/L33 (Repetition(Fletning og filer)).iml" />
       <module fileurl="file://$PROJECT_DIR$/Programmering1.iml" filepath="$PROJECT_DIR$/Programmering1.iml" />
       <module fileurl="file://$PROJECT_DIR$/ProjectKlasserogArrays/ProjectKlasserogArrays.iml" filepath="$PROJECT_DIR$/ProjectKlasserogArrays/ProjectKlasserogArrays.iml" />
       <module fileurl="file://$PROJECT_DIR$/ProjektKas/ProjektKas.iml" filepath="$PROJECT_DIR$/ProjektKas/ProjektKas.iml" />
@@ -29,7 +29,7 @@
       <module fileurl="file://$PROJECT_DIR$/SUOpgave9/SUOpgave9.iml" filepath="$PROJECT_DIR$/SUOpgave9/SUOpgave9.iml" />
       <module fileurl="file://$PROJECT_DIR$/SeatingTests/SeatingTests.iml" filepath="$PROJECT_DIR$/SeatingTests/SeatingTests.iml" />
       <module fileurl="file://$PROJECT_DIR$/SemesterproeveJanuar2018/SemesterproeveJanuar2018.iml" filepath="$PROJECT_DIR$/SemesterproeveJanuar2018/SemesterproeveJanuar2018.iml" />
-      <module fileurl="file://$PROJECT_DIR$/SommerStart2022/SommerStart2022.iml" filepath="$PROJECT_DIR$/SommerStart2022/SommerStart2022.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SommerStart2022/SommerStart2022(Hele første semester fra dem der startede i sommers).iml" filepath="$PROJECT_DIR$/SommerStart2022/SommerStart2022(Hele første semester fra dem der startede i sommers).iml" />
       <module fileurl="file://$PROJECT_DIR$/StudieStartP/StudieStartP.iml" filepath="$PROJECT_DIR$/StudieStartP/StudieStartP.iml" />
       <module fileurl="file://$PROJECT_DIR$/SystemUdviklingL6/SystemUdviklingL6.iml" filepath="$PROJECT_DIR$/SystemUdviklingL6/SystemUdviklingL6.iml" />
       <module fileurl="file://$PROJECT_DIR$/Yatzy/Yatzy.iml" filepath="$PROJECT_DIR$/Yatzy/Yatzy.iml" />
