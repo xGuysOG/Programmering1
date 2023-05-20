@@ -8,14 +8,13 @@ public class Bestilling {
     private LocalDate dato;
     private ArrayList<Plads> pladser;
     private Kunde kunde;
-
     private Forestilling forestilling;
 
-    public Bestilling(LocalDate dato, Forestilling forestilling, Kunde kunde) {
+    public Bestilling(LocalDate dato, Forestilling forestilling, Kunde kunde, ArrayList<Plads> pladse) {
         this.forestilling = forestilling;
         this.dato = dato;
         this.kunde = kunde;
-        pladser = new ArrayList<>();
+        this.pladser = pladse;
     }
 
     public Kunde getKunde(){

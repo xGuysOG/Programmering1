@@ -7,7 +7,6 @@ public class Plads {
     private int række;
     private int nr;
     private int pris;
-    private Bestilling bestilling;
     public Plads(int række, int nr, int pris) {
         række = række;
         this.nr = nr;
@@ -48,7 +47,6 @@ public class Plads {
                 "række=" + række +
                 ", nr=" + nr +
                 ", pris=" + pris +
-                ", bestilling=" + bestilling +
                 '}';
     }
 }

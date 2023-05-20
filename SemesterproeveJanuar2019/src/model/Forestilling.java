@@ -92,9 +92,8 @@ public class Forestilling {
     }
 
     public void addBestilling(Bestilling bestilling) {
-        this.bestillinger.add(bestilling);
+        bestillinger.add(bestilling);
     }
-
 
     @Override
     public String toString() {
@@ -102,7 +101,7 @@ public class Forestilling {
                 "navn='" + navn + '\'' +
                 ", startDato=" + startDato +
                 ", slutDato=" + slutDato +
-                ", bestillinger=" + bestillinger +
+                ", bestillinger=" + bestillinger.size() +
                 '}';
     }
 

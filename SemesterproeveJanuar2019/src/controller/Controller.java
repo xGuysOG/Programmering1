@@ -6,6 +6,8 @@ import model.Kunde;
 import model.Plads;
 import storage.Storage;
 
+import java.io.File;
+import java.io.PrintWriter;
 import java.time.LocalDate;
 import java.util.ArrayList;
 
@@ -23,7 +25,10 @@ public class Controller {
     }
 
     public static Bestilling opretBestillingMedPladser(Forestilling forestilling, Kunde kunde, LocalDate dato, ArrayList<Plads> pladser) {
-        if (dato.isAfter(forestilling.getStartDato().minusDays(1)) && dato.isBefore(forestilling.getSlutDato().plusDays(1))) {
+        System.out.println("Forstilling Start " + forestilling.getStartDato().toString());
+        System.out.println("Forstilling Slut" + forestilling.getSlutDato().toString());
+        System.out.println("Bestilling" + dato.toString());
+        if (!dato.isAfter(forestilling.getStartDato().minusDays(1)) && dato.isBefore(forestilling.getSlutDato().plusDays(1))) {
             throw new RuntimeException("Dato passer ikke ind i forestilling");
         }
         //then check if seat is free
@@ -34,8 +39,7 @@ public class Controller {
                 }
             }
         }
-
-        Bestilling bestilling = new Bestilling(dato, forestilling, kunde);
+        Bestilling bestilling = new Bestilling(dato, forestilling, kunde, pladser);
         forestilling.addBestilling(bestilling);
         return bestilling;
 
@@ -43,5 +47,17 @@ public class Controller {
 //        hvor forestillingen vises. Hvis en af de givne pladser ikke er ledige på den givne dato, eller
 //        forestillingen ikke vises på den givne dato, skal metoden kaste en RuntimeException med en
 //        passende tekst.
+    }
+
+    public static void oversigtOverForestillinger(String filnavn) {
+        File file = new File(filnavn);
+        try (PrintWriter out = new PrintWriter(file)) {
+            for(Forestilling forestilling : Storage.getForestillinger()){
+                out.println(forestilling.getNavn());
+            }
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+
     }
 }
