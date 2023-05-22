@@ -1,0 +1,3 @@
+Plads 1: AB 11 222 AUDI
+Plads 2: EF 33 444 CITROEN
+Plads 3: BD 55 666 ZUSUKI
