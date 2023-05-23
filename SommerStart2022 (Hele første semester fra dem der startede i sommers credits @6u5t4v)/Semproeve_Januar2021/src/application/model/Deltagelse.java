@@ -15,7 +15,7 @@ public class Deltagelse {
     }
 
     public boolean erRegistreretFravarende() {
-        return status != DeltagerStatus.TILSTEDE && registreret;
+        return status != model.TILSTEDE && registreret;
     }
 
     public Lektion getLektion() {

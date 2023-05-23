@@ -31,7 +31,7 @@ public class Lektion {
     }
 
     public Deltagelse createDeltagelse(Studerende studerende) {
-        Deltagelse deltagelse = new Deltagelse(false, DeltagerStatus.TILSTEDE, studerende, this);
+        Deltagelse deltagelse = new Deltagelse(false, model.TILSTEDE, studerende, this);
         deltagelseList.add(deltagelse);
         return deltagelse;
     }
