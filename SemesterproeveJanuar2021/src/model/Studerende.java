@@ -2,7 +2,7 @@ package model;
 
 import java.util.ArrayList;
 
-public class Studerende {
+public class Studerende implements Comparable<Studerende> {
     private String navn;
     private String email;
 
@@ -21,5 +21,14 @@ public class Studerende {
             }
         }
         return total;
+    }
+
+    public String getNavn(){
+        return this.navn;
+    }
+
+    @Override
+    public int compareTo(Studerende o) {
+        return navn.compareTo(o.navn);
     }
 }
