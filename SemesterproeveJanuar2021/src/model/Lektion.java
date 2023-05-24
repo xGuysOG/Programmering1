@@ -52,4 +52,9 @@ public class Lektion {
     public void addDeltagelse(Deltagelse deltagelse){
         deltagelser.add(deltagelse);
     }
+
+    @Override
+    public String toString() {
+        return dato.toString() + " " + startTid.toString() + " " + lokale;
+    }
 }

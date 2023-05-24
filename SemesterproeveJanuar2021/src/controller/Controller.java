@@ -21,6 +21,7 @@ public class Controller {
 
     public static Lektion createLektion(LocalDate dato, LocalTime startTid, String lokale, Fag fag){
         Lektion lektion = new Lektion(dato,startTid,lokale,fag);
+        fag.addLektion(lektion);
         return lektion;
     }
 
@@ -113,17 +114,19 @@ public class Controller {
         Fag pro120T = createFag("PRO1", "20T");
         Fag SU120S = createFag("SU1", "20S");
 
-        createLektion(LocalDate.of(2021, 2, 1), LocalTime.of(8, 30, 0),
+        Lektion lektion = createLektion(LocalDate.of(2021, 2, 1), LocalTime.of(8, 30, 0),
                 "A1.32", pro120S);
-        createLektion(LocalDate.of(2021, 2, 1), LocalTime.of(10, 30, 0),
+        Lektion lektion1 = createLektion(LocalDate.of(2021, 2, 1), LocalTime.of(10, 30, 0),
                 "A1.32", pro120S);
-        createLektion(LocalDate.of(2021, 2, 3), LocalTime.of(8, 30, 0),
+        Lektion lektion2 = createLektion(LocalDate.of(2021, 2, 3), LocalTime.of(8, 30, 0),
                 "A1.32", pro120S);
-        createLektion(LocalDate.of(2021, 2, 3), LocalTime.of(8, 30, 0),
+        Lektion lektion3 = createLektion(LocalDate.of(2021, 2, 3), LocalTime.of(8, 30, 0),
                 "A1.32", pro120S);
 
         opretDeltagelser(pro120S, peterHansen);
         opretDeltagelser(pro120S, tinaJensen);
         opretDeltagelser(pro120S, saschaPetersen);
+
+
     }
 }

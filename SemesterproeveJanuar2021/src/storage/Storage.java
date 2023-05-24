@@ -7,8 +7,8 @@ import java.util.ArrayList;
 
 public class Storage {
 
-    public static final ArrayList<Fag> fagene = new ArrayList<>();
-    public static final ArrayList<Studerende> studerendene = new ArrayList<>();
+    private static final ArrayList<Fag> fagene = new ArrayList<>();
+    private static final ArrayList<Studerende> studerendene = new ArrayList<>();
 
     public static void storeFag(Fag fag){
         fagene.add(fag);

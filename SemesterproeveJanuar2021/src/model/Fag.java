@@ -9,8 +9,6 @@ public class Fag {
     private String navn;
     private String klasse;
 
-
-
     private ArrayList<Lektion> lektioner;
 
 
@@ -18,6 +16,10 @@ public class Fag {
         this.navn = navn;
         this.klasse = klasse;
         this.lektioner = new ArrayList<>();
+    }
+
+    public void addLektion(Lektion lektion){
+        lektioner.add(lektion);
     }
 
     public ArrayList<Studerende> sygdomPåDato(LocalDate dato){
@@ -58,10 +60,6 @@ public class Fag {
         }
         return cachedLektion;
     }
-
-
-
-
     public String getNavn() {
         return navn;
     }
@@ -72,5 +70,10 @@ public class Fag {
 
     public ArrayList<Lektion> getLektioner() {
         return lektioner;
+    }
+
+    @Override
+    public String toString() {
+        return navn + " " + klasse;
     }
 }

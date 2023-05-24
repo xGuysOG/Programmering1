@@ -38,4 +38,9 @@ public class Deltagelse {
     public Lektion getLektion() {
         return lektion;
     }
+
+    @Override
+    public String toString() {
+        return studerende.getNavn() + " " + registeret + " " + status;
+    }
 }
