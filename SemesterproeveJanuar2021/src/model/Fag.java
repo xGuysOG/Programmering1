@@ -9,6 +9,8 @@ public class Fag {
     private String navn;
     private String klasse;
 
+
+
     private ArrayList<Lektion> lektioner;
 
 
@@ -34,5 +36,17 @@ public class Fag {
             }
         }
         return studerendeListe;
+    }
+
+    public String getNavn() {
+        return navn;
+    }
+
+    public String getKlasse() {
+        return klasse;
+    }
+
+    public ArrayList<Lektion> getLektioner() {
+        return lektioner;
     }
 }

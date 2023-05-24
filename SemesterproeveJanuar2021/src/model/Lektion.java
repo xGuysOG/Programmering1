@@ -38,4 +38,8 @@ public class Lektion {
     public Fag getFag() {
         return fag;
     }
+
+    public void addDeltagelse(Deltagelse deltagelse){
+        deltagelser.add(deltagelse);
+    }
 }
