@@ -19,6 +19,16 @@ public class Lektion {
         this.deltagelser = new ArrayList<>();
     }
 
+    public int antalFraværende(){
+        int total = 0;
+        for(Deltagelse deltagelse : deltagelser){
+            if (deltagelse.erRegistreretFraværende()) {
+                total++;
+            }
+        }
+        return total;
+    }
+
     public LocalDate getDato() {
         return dato;
     }
