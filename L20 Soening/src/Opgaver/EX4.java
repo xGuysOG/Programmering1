@@ -1,4 +1,4 @@
-package Opgave1;
+package Opgaver;
 
 import java.util.ArrayList;
 

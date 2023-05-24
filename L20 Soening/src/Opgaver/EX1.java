@@ -1,4 +1,4 @@
-package Opgave1;
+package Opgaver;
 
 public class EX1 {
     //Write a linear search method that returns, whether an uneven number exists in an array. The

@@ -1,4 +1,4 @@
-package Opgave1;
+package Opgaver;
 
 public class EX2 {
 

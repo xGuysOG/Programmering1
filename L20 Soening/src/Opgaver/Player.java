@@ -1,4 +1,4 @@
-package Opgave1;
+package Opgaver;
 
 public class Player {
     private String name;
