@@ -1,6 +1,5 @@
 package model;
 
-import java.time.LocalTime;
 import java.util.ArrayList;
 
 public class Tutor {
@@ -9,19 +8,24 @@ public class Tutor {
 
     private Hold hold;
 
-    public ArrayList<Arrangement> getArrangementer() {
-        return arrangementer;
-    }
-
-    public void setArrangementer(ArrayList<Arrangement> arrangementer) {
-        this.arrangementer = arrangementer;
-    }
-
     private ArrayList<Arrangement> arrangementer = new ArrayList<>();
 
     public Tutor(String navn, String email) {
         this.navn = navn;
         this.email = email;
+    }
+
+    public boolean harTidsOverlap(Arrangement tilmeldt, Arrangement arrangement) {
+        return tilmeldt.getStartTid().isBefore(arrangement.getSlutTid()) && tilmeldt.getSlutTid().isAfter(tilmeldt.getStartTid());
+    }
+
+
+    public double arrangementsPris(){
+        double totalPris = 0;
+        for(Arrangement arrangement : arrangementer) {
+            totalPris += arrangement.getPris();
+        }
+        return totalPris;
     }
 
     public String getNavn(){
@@ -36,16 +40,21 @@ public class Tutor {
         this.hold = hold;
     }
 
-    public boolean overlapperTiden(Arrangement tilmeldt, Arrangement arrangement) {
-        return tilmeldt.getStartTid().isBefore(arrangement.getSlutTid()) && tilmeldt.getSlutTid().isAfter(tilmeldt.getStartTid());
+    public ArrayList<Arrangement> getArrangementer() {
+        return arrangementer;
     }
 
+    public void setArrangementer(ArrayList<Arrangement> arrangementer) {
+        this.arrangementer = arrangementer;
+    }
 
-    public double arrangementsPris(){
-        double totalPris = 0;
-        for(Arrangement arrangement : arrangementer) {
-            totalPris += arrangement.getPris();
-        }
-        return totalPris;
+    @Override
+    public String toString() {
+        return "Tutor{" +
+                "navn='" + navn + '\'' +
+                ", email='" + email + '\'' +
+                ", hold=" + hold +
+                ", arrangementer=" + arrangementer +
+                '}';
     }
 }

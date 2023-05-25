@@ -12,8 +12,8 @@ import java.util.ArrayList;
 
 public class Service {
 
-    public static Arrangement opretArrangement(String titel, LocalDate dato, LocalTime startTid, LocalTime slutTid, double pris) {
-        Arrangement arrangement = new Arrangement(titel, dato, startTid, slutTid, pris);
+    public static Arrangement opretArrangement(String title, LocalDate dato, LocalTime startTid, LocalTime slutTid, double pris) {
+        Arrangement arrangement = new Arrangement(title, dato, startTid, slutTid, pris);
         Storage.storeArrangement(arrangement);
         return arrangement;
     }
@@ -46,7 +46,7 @@ public class Service {
         for (Tutor tutor : tutore) {
             for (Arrangement tilArrangement : tutor.getArrangementer()) {
                 if (arrangement.getDato().equals(tilArrangement.getDato())) {
-                    if (tutor.overlapperTiden(tilArrangement, arrangement)) {
+                    if (tutor.harTidsOverlap(tilArrangement, arrangement)) {
                         throw new RuntimeException(tutor.getNavn() + " Cant be added to" + arrangement.getTitel() + " since it overlaps");
                     }
                 }

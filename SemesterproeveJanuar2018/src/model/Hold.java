@@ -8,10 +8,6 @@ public class Hold {
 
     private Uddannelse uddannelse;
 
-    public ArrayList<Tutor> getTutore() {
-        return tutore;
-    }
-
     private final ArrayList<Tutor> tutore = new ArrayList<>();
 
     public Hold(String betegnelsen, String holdLeder) {
@@ -31,7 +27,7 @@ public class Hold {
         for (Tutor tutor : tutore) {
             for (Arrangement tilArrangement : tutor.getArrangementer()) {
                 if (arrangement.getDato().equals(tilArrangement.getDato())) {
-                    if (tutor.overlapperTiden(tilArrangement, arrangement)) {
+                    if (tutor.harTidsOverlap(tilArrangement, arrangement)) {
                         return true;
                     }
                 }
@@ -40,8 +36,20 @@ public class Hold {
         return false;
     }
 
-
+    public ArrayList<Tutor> getTutore() {
+        return tutore;
+    }
     public String getBetegnelse() {
        return this.betegnelsen;
+    }
+
+    @Override
+    public String toString() {
+        return "Hold{" +
+                "betegnelsen='" + betegnelsen + '\'' +
+                ", holdLeder='" + holdLeder + '\'' +
+                ", uddannelse=" + uddannelse +
+                ", tutore=" + tutore +
+                '}';
     }
 }

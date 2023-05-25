@@ -32,4 +32,12 @@ public class Uddannelse {
         }
         return holdne;
     }
+
+    @Override
+    public String toString() {
+        return "Uddannelse{" +
+                "navn='" + navn + '\'' +
+                ", holdListe=" + holdListe +
+                '}';
+    }
 }
