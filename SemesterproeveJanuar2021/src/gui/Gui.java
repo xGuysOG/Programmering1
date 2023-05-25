@@ -43,6 +43,8 @@ public class Gui extends Application {
 
     private final Button btnFravær = new Button("Fravær");
 
+    private final ToggleGroup toggleGroup = new ToggleGroup();
+
 
 
     // -----------------------------------------------------------
@@ -83,14 +85,13 @@ public class Gui extends Application {
         lvwDeltagelse.setPrefWidth(300);
 
         pane.add(lblFravær, 11,0);
-        RadioButton  checkBox1 = new RadioButton (DeltagerStatus.TILSTEDE.toString());
-        RadioButton  checkBox2 = new RadioButton (DeltagerStatus.FRAVÆR.toString());
-        RadioButton  checkBox3 = new RadioButton (DeltagerStatus.SYG.toString());
-        RadioButton  checkBox4 = new RadioButton (DeltagerStatus.AFBUD.toString());
+        RadioButton checkBox1 = new RadioButton (DeltagerStatus.TILSTEDE.toString());
+        RadioButton checkBox2 = new RadioButton (DeltagerStatus.FRAVÆR.toString());
+        RadioButton checkBox3 = new RadioButton (DeltagerStatus.SYG.toString());
+        RadioButton checkBox4 = new RadioButton (DeltagerStatus.AFBUD.toString());
 
 
         // Create a toggle group
-        ToggleGroup toggleGroup = new ToggleGroup();
         checkBox1.setToggleGroup(toggleGroup);
         checkBox2.setToggleGroup(toggleGroup);
         checkBox3.setToggleGroup(toggleGroup);
@@ -103,9 +104,30 @@ public class Gui extends Application {
 
         pane.add(vbox,11, 1);
         pane.add(btnFravær, 11,3);
+        btnFravær.setOnAction(event -> this.setFravær());
 
         lblError.setTextFill(Color.RED);
         pane.add(lblError, 0, 11, 3, 1);
+    }
+
+    private void setFravær(){
+        if(lvwDeltagelse.getSelectionModel().isEmpty()){
+            return;
+        }
+        Deltagelse deltagelse = lvwDeltagelse.getSelectionModel().getSelectedItem();
+        RadioButton selectedRadioButton = (RadioButton) toggleGroup.getSelectedToggle();
+
+        if (selectedRadioButton != null) {
+            String selectedOption = selectedRadioButton.getText();
+            // Execute code based on the selected option
+            DeltagerStatus status = DeltagerStatus.valueOf(selectedOption);;
+            deltagelse.registerFravær(status);
+            lvwDeltagelse.refresh();
+        } else {
+            // No RadioButton selected
+            System.out.println("No option selected");
+        }
+
     }
 
     private void fagClicked(MouseEvent event) {

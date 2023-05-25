@@ -14,6 +14,11 @@ public class Deltagelse {
         this.status = DeltagerStatus.TILSTEDE;
     }
 
+    public void registerFravær(DeltagerStatus status){
+        this.registeret = true;
+        this.status = status;
+    }
+
     public boolean erRegistreretFraværende(){
         if (registeret){
             if (status == DeltagerStatus.FRAVÆR){
