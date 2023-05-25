@@ -12,6 +12,7 @@ import java.util.ArrayList;
 public class App {
     public static void main(String[] args) {
         initStorage();
+        Gui.launch(Gui.class);
     }
     public static void initStorage(){
         Forestilling forestilling = Controller.createForestilling("Evita", LocalDate.parse("2019-01-10"), LocalDate.parse("2019-01-20"));

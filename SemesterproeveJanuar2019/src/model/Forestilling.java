@@ -59,6 +59,18 @@ public class Forestilling {
         return result;
     }
 
+    public ArrayList<Kunde> hentKunder(){
+        ArrayList<Kunde> kunder = new ArrayList<>();
+        for(Bestilling bestilling : bestillinger){
+            System.out.println("Bestillinger " + bestillinger.size());
+            if (!kunder.contains(bestilling.getKunde())){
+                kunder.add(bestilling.getKunde());
+            }
+        }
+        System.out.println("Return kunder " + kunder.size());
+        return kunder;
+    }
+
     public String getNavn() {
         return navn;
     }
@@ -97,12 +109,7 @@ public class Forestilling {
 
     @Override
     public String toString() {
-        return "Forestilling{" +
-                "navn='" + navn + '\'' +
-                ", startDato=" + startDato +
-                ", slutDato=" + slutDato +
-                ", bestillinger=" + bestillinger.size() +
-                '}';
+        return navn + " " + startDato + ", " + slutDato;
     }
 
     //Tilføj til klassen Forestilling metoden antalBestiltePladserPåDag(LocalDate dato): int,
