@@ -92,6 +92,8 @@ public class Controller {
         }
     }
 
+
+
     public static void initStorage() {
         Uddannelse DMU = opretUddannelse("DMU");
         Uddannelse FINØ = opretUddannelse("FINØ");

@@ -32,6 +32,20 @@ public class Uddannelse {
         }
         return holdne;
     }
+//    Tilføj følgende metode til klassen Uddannelse der returnerer en ArrayList med String objekter.
+//    Hver String i listen skal indeholde oplysninger om en tutor der er tilknyttet et hold. Dvs. navn på
+//    tutor, uddannelsens navn, holdets betegnelse, tutorens email og holdets holdleder i den angivne
+//    rækkefølge.
+//    public ArrayList<String> tutorOversigt()
+    public ArrayList<String> tutorOversigt(){
+        ArrayList<String> tutorer = new ArrayList<>();
+        for(Hold hold : holdListe){
+            for(Tutor tutor : hold.getTutore()){
+                tutorer.add(tutor.getNavn() +" " + navn + " " + hold.getBetegnelse() +" " + tutor.getEmail() + " " + hold.getHoldLeder());
+            }
+        }
+        return tutorer;
+    }
 
     @Override
     public String toString() {

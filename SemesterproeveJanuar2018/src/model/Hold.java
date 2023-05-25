@@ -23,6 +23,10 @@ public class Hold {
         return totalPris;
     }
 
+    public void addTutor(Tutor tutor){
+        tutore.add(tutor);
+    }
+
     public boolean harTidsoverlap(Arrangement arrangement){
         for (Tutor tutor : tutore) {
             for (Arrangement tilArrangement : tutor.getArrangementer()) {
@@ -38,6 +42,10 @@ public class Hold {
 
     public ArrayList<Tutor> getTutore() {
         return tutore;
+    }
+
+    public String getHoldLeder(){
+        return holdLeder;
     }
     public String getBetegnelse() {
        return this.betegnelsen;

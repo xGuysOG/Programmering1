@@ -32,6 +32,10 @@ public class Tutor {
         return navn;
     }
 
+    public String getEmail(){
+        return email;
+    }
+
     public void addArrangement(Arrangement arrangement){
         arrangementer.add(arrangement);
     }

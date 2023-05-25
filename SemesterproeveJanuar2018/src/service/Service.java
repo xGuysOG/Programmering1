@@ -6,6 +6,8 @@ import model.Tutor;
 import model.Uddannelse;
 import storage.Storage;
 
+import java.io.FileNotFoundException;
+import java.io.PrintWriter;
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.ArrayList;
@@ -39,6 +41,23 @@ public class Service {
     public static void tilføjTilHold(Hold hold, Tutor... tutore) {
         for (Tutor tutor : tutore) {
             tutor.setHold(hold);
+            hold.addTutor(tutor);
+        }
+    }
+
+    public static void tutorOversigtTilFil(String filNavn) {
+        try (PrintWriter out = new PrintWriter(filNavn)) {
+            ArrayList<Uddannelse> uddannelser = Storage.getUddannelser();
+            for (Uddannelse uddannelse : uddannelser) {
+                ArrayList<String> oversigt = uddannelse.tutorOversigt();
+                for (String line : oversigt) {
+                    out.println(line);
+                }
+            }
+            System.out.println("Successfully created file");
+
+        } catch (FileNotFoundException e) {
+            throw new RuntimeException(e);
         }
     }
 
@@ -102,13 +121,13 @@ public class Service {
         System.out.println();
 
         System.out.println("Tutor oversigt for DMU");
-//        ArrayList<String> oversigt = DMU.tutorOversigt();
-//        for (String str : oversigt) {
-//            System.out.println(str);
-//        }
-//        System.out.println();
+        ArrayList<String> oversigt = DMU.tutorOversigt();
+        for (String str : oversigt) {
+            System.out.println(str);
+        }
+        System.out.println();
 //
-//        System.out.println("Tutor oversigt for til fil");
-//        tutorOversigtTilFil("tutoroversigt.txt");
+        System.out.println("Tutor oversigt for til fil");
+        tutorOversigtTilFil("tutoroversigt.txt");
     }
 }
