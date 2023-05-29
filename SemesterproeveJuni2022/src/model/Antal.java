@@ -8,4 +8,13 @@ public class Antal {
         this.antal = antal;
         this.funktion = funktion;
     }
+
+    public int getAntal() {
+        return antal;
+    }
+
+    public Funktion getFunktion() {
+        return funktion;
+    }
+
 }

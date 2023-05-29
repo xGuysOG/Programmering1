@@ -8,6 +8,8 @@ import java.util.ArrayList;
 public class Vagt {
     private String navn;
     private LocalDateTime tidFra;
+
+
     private LocalDateTime tidTil;
 
     private ArrayList<Antal> antals = new ArrayList<>();
@@ -19,11 +21,19 @@ public class Vagt {
         this.tidTil = tidTil;
     }
 
-//    Tilføj til klassen Vagt en metode
-//    findMedarbejder(LocalTime tidspunkt, int antalTimer)
-//    Metoden skal returnere en medarbejder, som møder på den angivne tidspunkt, og arbejder
-//    mindst det angivne antal timer. Hvis en sådan medarbejder ikke findes, skal metoden returnere
-//null.
+    public void removeMedarbejder(Medarbejder medarbejder) {
+        if (medarbejdere.contains(medarbejder)) {
+            medarbejdere.remove(medarbejder);
+            medarbejder.removeVagt(this);
+        }
+    }
+
+    public Antal createAntal(int antalMedarbejdere, Funktion funktion) {
+        Antal antal = new Antal(antalMedarbejdere, funktion);
+        antals.add(antal);
+        return antal;
+    }
+
     public Medarbejder findMedarbejder(LocalTime tidspunkt, int antalTimer) {
         Medarbejder medarbejderToReturn = null;
         int index = 0;
@@ -36,10 +46,7 @@ public class Vagt {
         }
         return medarbejderToReturn;
     }
-//    Når der løbende laves regnskab, skal køkkenchefen kunne aflæse det samlede timeforbrug for en
-//    given vagt, forstået som antallet af tilknyttede medarbejdere ganget med vagtens varighed.
-//    Tilføj til klassen Vagt en metode beregnTimeforbrug() : int, der returnerer vagtens
-//    samlede timeforbrug afrundet opad til nærmeste hele time.
+
     public int beregnTimeforbrug(){
         Duration duration = Duration.between(tidFra, tidTil);
         int math = (int) (duration.toHours() * medarbejdere.size());
@@ -58,22 +65,6 @@ public class Vagt {
         }
         return amount;
     }
-//    Medarbejdere kan ved oprettelse få registreret deres typiske mødetid i kantinen. Ved nogle vagter
-//    er det vigtigt, at der tages højde for, at alle tilknyttede medarbejdere er til stede fra vagtens start.
-//    Tilføj til klassen Vagt en metode skalAdviseresOmMødetid() : Medarbejder[], der
-//    returnerer et array med de medarbejdere på vagten, som har typisk mødetid senere end vagtens
-//    start tid.
-//public Medarbejder[] skalAdviseresOmMødetid() {
-//    ArrayList<Medarbejder> medarbejdereMedSenereMødetid = new ArrayList<>();
-//
-//    for (Medarbejder medarbejder : medarbejdere) {
-//        if (medarbejder.getTypiskMødetid().compareTo(startTid) > 0) {
-//            medarbejdereMedSenereMødetid.add(medarbejder);
-//        }
-//    }
-//
-//    return medarbejdereMedSenereMødetid.toArray(new Medarbejder[0]);
-//}
     public Medarbejder[] skalAdviseresOmMødetid(){
         Medarbejder[] medarbejdereMedSenereMødetid = new Medarbejder[medarbejdere.size()];
         int sizeNeeded = 0;
@@ -97,16 +88,53 @@ public class Vagt {
 
     }
 
-//    For at en vagt kan gennemføres optimalt, skal den være tilknyttet det antal medarbejderne med
-//    en given funktion, som det ved Antal er registreret, at udførelsen af vagtens opgaver kræver.
-//    Tilføj til klassen Vagt en metode status() : String, der returnerer værdien ”Ressourcer
-//    tildelt”, hvis der er tilknyttet det tilstrækkelige antal medarbejdere med de påkrævede funktioner
-//for at vagten kan gennemføres. Hvis ikke, returneres ”Manglende resourcer”.
-//    OBS: Det er et krav, at metoden anvender søgeskabelonen
-    public String status() {
-        //fuck this shit im out mhmm
-        String test = "";
-        return test;
+    public void addMedarbejder(Medarbejder medarbejder) {
+        if (!medarbejdere.contains(medarbejder)) {
+            medarbejdere.add(medarbejder);
+            medarbejder.addVagt(this);
+        }
     }
+    public String status() {
+        int index = 0;
+        //fuck this shit im out mhmm
+        String status = "Resourcer tildelt";
+        while (index < antals.size()) {
+            Antal antal = antals.get(index);
+            //we need to check if antal is bigger or smaller then amount of functions
+            int antalFunktioner = 0;
+            for(Medarbejder medarbejder : medarbejdere){
+                if (medarbejder.getFunktioner().contains(antal.getFunktion())){
+                    //the antal connected to this vagt fits so now we add one to the amount
+                    antalFunktioner++;
+                }
+            }
+            if (antalFunktioner < antal.getAntal()){
+                status = "Manglende resourcer";
+            }
+            index++;
+        }
+        return status;
+    }
+
+    public String getNavn() {
+        return navn;
+    }
+
+    public LocalDateTime getTidFra() {
+        return tidFra;
+    }
+
+    public LocalDateTime getTidTil() {
+        return tidTil;
+    }
+
+    public ArrayList<Antal> getAntals() {
+        return antals;
+    }
+
+    public ArrayList<Medarbejder> getMedarbejdere() {
+        return medarbejdere;
+    }
+
 
 }

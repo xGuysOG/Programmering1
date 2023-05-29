@@ -63,6 +63,19 @@ public class TestSearch {
         return found;
     }
 
+//    private static boolean match(String sm, String m, int i) {
+//        boolean foundDiff = false;
+//        int j = 0;
+//        while (!foundDiff && j < m.length()) {
+//            char k = sm.charAt(i + j);
+//            if (k != m.charAt(j))
+//                foundDiff = true;
+//            else
+//                j++;
+//        }
+//        return !foundDiff;
+//    }
+
     // Linear search in ArrayList<String>.
 
     /**
