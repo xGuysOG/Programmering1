@@ -67,4 +67,8 @@ public class Medarbejder {
         }
     }
 
+    @Override
+    public String toString() {
+        return navn +", " + "Typisk mødetid: "+ typiskMødetid;
+    }
 }

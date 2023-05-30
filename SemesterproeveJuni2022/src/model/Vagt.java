@@ -34,6 +34,24 @@ public class Vagt {
         return antal;
     }
 
+    public String description() {
+        StringBuilder desc = new StringBuilder("Navn: " + navn + "\n" +
+                "Fra: " + tidFra + "\n" +
+                "Til: " + tidTil + "\n" +
+                "Status: " + status() + "\n" +
+                "Tilknyttede medarbejdere: \n");
+
+        for (Medarbejder medarbejder : medarbejdere) {
+            desc.append(medarbejder.getNavn()).append(" ");
+        }
+        return desc.toString();
+    }
+
+    @Override
+    public String toString() {
+        return navn;
+    }
+
     public Medarbejder findMedarbejder(LocalTime tidspunkt, int antalTimer) {
         Medarbejder medarbejderToReturn = null;
         int index = 0;
