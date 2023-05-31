@@ -3,6 +3,7 @@ package controller;
 import model.Indtag;
 import model.Patient;
 import model.PersonligtMåltid;
+import storage.Storage;
 
 import java.util.ArrayList;
 
@@ -10,17 +11,19 @@ public class Controller {
 
     public static Patient createPatient(String navn, double vægt, int vægtFaktor){
         Patient patient = new Patient(navn, vægt, vægtFaktor);
-        //make links later
+        Storage.storePatient(patient);
         return patient;
     }
 
     public static PersonligtMåltid createPersonligtMåltid(String navn, String anretterNavn, Patient patient){
         PersonligtMåltid personligtMåltid = new PersonligtMåltid(navn, anretterNavn, patient);
+        patient.addMåltid(personligtMåltid);
         return personligtMåltid;
     }
 
     public static Indtag createIndtag(int vejetFørIndtagelse, int vejetEfterIndtagelse, String beskrivelse, int anslåetAntalKalorier, PersonligtMåltid personligtMåltid){
         Indtag indtag = new Indtag(vejetFørIndtagelse, vejetEfterIndtagelse, beskrivelse, anslåetAntalKalorier, personligtMåltid);
+        personligtMåltid.addIndtag(indtag);
         return indtag;
     }
 

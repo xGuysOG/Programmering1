@@ -8,6 +8,7 @@ public class Patient {
     private String navn;
     private double vægt;
     private int vægtFaktor;
+
     private ArrayList<PersonligtMåltid> personligtMåltider = new ArrayList<>();
 
     public Patient(String navn, double vægt, int vægtFaktor){
@@ -28,6 +29,10 @@ public class Patient {
         return toReturn;
     }
 
+    public void addMåltid(PersonligtMåltid personligtMåltid){
+        personligtMåltider.add(personligtMåltid);
+    }
+
     public void sortMåltider(){
         Collections.sort(personligtMåltider);
     }
@@ -40,12 +45,24 @@ public class Patient {
 
     }
 
+    public String getNavn() {
+        return navn;
+    }
+
+    public double getVægt() {
+        return vægt;
+    }
+
+    public int getVægtFaktor() {
+        return vægtFaktor;
+    }
+
+    public ArrayList<PersonligtMåltid> getPersonligtMåltider() {
+        return personligtMåltider;
+    }
+
     @Override
     public String toString() {
-        return "Patient{" +
-                "navn='" + navn + '\'' +
-                ", vægt=" + vægt +
-                ", vægtFaktor=" + vægtFaktor +
-                '}';
+        return navn + " - " + vægtFaktor + " - " + vægt;
     }
 }

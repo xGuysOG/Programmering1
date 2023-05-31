@@ -17,6 +17,9 @@ public class PersonligtMåltid implements Comparable<PersonligtMåltid>{
 
     //hvor PersonligtMåltid har ansvaret for at oprette Indtag-objekter.
 
+    public void addIndtag(Indtag indtag) {
+        indtagelser.add(indtag);
+    }
     public String getNavn() {
         return navn;
     }
@@ -65,11 +68,7 @@ public class PersonligtMåltid implements Comparable<PersonligtMåltid>{
 
     @Override
     public String toString() {
-        return "PersonligtMåltid{" +
-                "navn='" + navn + '\'' +
-                ", anretterNavn='" + anretterNavn + '\'' +
-                ", patient=" + patient +
-                '}';
+        return navn + " - " + anretterNavn;
     }
 }
 
