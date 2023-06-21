@@ -87,7 +87,6 @@ public class Controller {
         } catch (FileNotFoundException e) {
             throw new RuntimeException(e);
         }
-
     }
 
     public static void initStorage(){
